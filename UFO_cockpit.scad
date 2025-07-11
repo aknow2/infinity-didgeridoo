@@ -9,13 +9,13 @@ d_major = (cockpit_size-2.4) * 2;
 pitch   = 5;     // ピッチ 5 mm
 length  = 20;    // ネジ長さ 20 mm
 thick   = 5;    // 雌ネジ穴の肉厚
-cockpit_height = 60;
-roof_height = 30;
+cockpit_height = 50;
+roof_height = 27;
 module ufo_cockpit() {
 
     difference() {
         // UFO cockpit
-        cylinder(h = cockpit_height, r = cockpit_size+5);
+        cylinder(h = cockpit_height, r = cockpit_size+2);
         cylinder(h = 200, r= d_major/2, center=true);
         translate([0, 0, cockpit_height/2+10])
             rotate([90, 0, 0])
@@ -29,8 +29,8 @@ module ufo_cockpit() {
     // UFO cockpit roof
     translate([0, 0, cockpit_height])
         difference() {
-            cylinder(h = roof_height, r1=cockpit_size+5, r2=cockpit_size/2);
-            cylinder(h = roof_height-5, r1=cockpit_size, r2=cockpit_size/2-5);
+            cylinder(h = roof_height, r1=cockpit_size+2, r2=cockpit_size/2);
+            cylinder(h = roof_height-5, r1=d_major/2, r2=d_major/4);
         }
     difference() {
         cylinder(h = length, d = d_major + 2*thick);

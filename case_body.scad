@@ -52,6 +52,17 @@ difference() {
 body();// 本体
 translate([50, 0, 0])
 rotate([90,0,90])
-cylinder(r=6, h=70, center=false);
+cylinder(r=25, h=70, center=false);
+}
+
+translate([67, 0, 0])
+rotate([90,0,90]) {
+difference() {
+  cylinder(r=28, h=12, center=false);
+  cylinder(r=25, h=12, center=false);
+translate([0, -20, 13])
+    cube([70, 40, 40], center=true);
+}
+
 }
 
